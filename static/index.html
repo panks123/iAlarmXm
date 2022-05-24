@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iAlarmXm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src= "images/alarm.svg" alt="" width="50" style="filter: invert(100%);">
+                <span class="title inline" style="font-size: 1.5rem;"><span class="i">i</span>AlarmXm</span>
+            </a>
+            <div class="today" id="today" style="color: white;">
+
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="display: flex;">
+        <div class="timeSection mx-1 my-4">
+            <label for="time" style="font-family: 'Courier New', monospace; font-weight:bold;">Select time:</label>
+            <input type="time" id="time" name="time">
+        </div>
+
+        <div class="dayOptions mx-5 my-4">
+
+            <div style="font-family: 'Courier New', monospace; font-weight:bold;">Tick the days you want to put an alarm</div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="everyday" value="7">
+                <label class="form-check-label" for="inlineCheckbox1">Everyday</label>
+            </div>
+
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="sunday" value="0">
+                <label class="form-check-label" for="inlineCheckbox1">Sunday</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="monday" value="1">
+                <label class="form-check-label" for="inlineCheckbox1">Monday</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="tuesday" value="2">
+                <label class="form-check-label" for="inlineCheckbox1">Tuesday</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="wednesday" value="3">
+                <label class="form-check-label" for="inlineCheckbox1">Wednesday</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="thursday" value="4">
+                <label class="form-check-label" for="inlineCheckbox1">Thursday</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="friday" value="5">
+                <label class="form-check-label" for="inlineCheckbox1">Friday</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="saturday" value="6">
+                <label class="form-check-label" for="inlineCheckbox1">Saturday</label>
+            </div>
+            <br>
+            <div class="form-floating" style="margin-top: 1rem;">
+                <textarea class="form-control" placeholder="Alarm label" id="label"></textarea>
+                <label for="label">Label:</label>
+              </div>
+            <div class="btn">
+                <button type="button" class="btn btn-success my-3" id="setAlarm">Set alarm</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-0">
+        <hr>
+        <div>
+            <!-- Upcoming alarms will be shown here -->
+            <div id="upcomingAlarms" class="row container-fluid" style="justify-content: center; margin-bottom:2rem;">
+                <!-- Here all the upcoming alarms will be added dynamically by Javascript -->
+            </div>
+        </div>
+        <h4>Your alarms </h4>
+        <hr style="color: black;">
+        <div id="alarms" class="row container-fluid" style="justify-content: center; margin-bottom:2rem;">
+            <!-- Here all the alarms will be added dynamically by Javascript -->
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-item" id="item1">
+            <img id="me" src="images/me1.png" alt="Pankaj">
+        </div>
+
+        <div class="footer-item" id="item2">Pankaj Kumar</div>
+
+        <div class="footer-item" id="item3">Copyright © <span id="copyright-year">2021</span> <span class="i">i</span>AlarmXm</div>
+
+        <div class="footer-item" id="item4">
+            <a href="/pankaj_linkedin" target="_blank">
+                <img src="images/linkedin.png"></img>
+              </a>
+              <a href="/pankaj_github" target="_blank">
+                <img src="images/github.png"></img>
+              </a>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
